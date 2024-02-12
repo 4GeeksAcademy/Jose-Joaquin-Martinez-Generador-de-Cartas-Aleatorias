@@ -78,8 +78,9 @@ body {
   border: 3px black;
 }
 
-.btn:hover {
+button:hover {
   background-color: aliceblue;
+  font-weight: bold;
 }
 
 .btn-clear {
