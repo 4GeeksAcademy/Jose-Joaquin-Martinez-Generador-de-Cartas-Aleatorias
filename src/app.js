@@ -28,14 +28,6 @@ const generateRandomCard = () => {
   // Add selected class
   document.getElementById("topLeftSuit").classList.add(suit);
   document.getElementById("bottomRightSuit").classList.add(suit);
-
-  //getting users inputs on height and width
-  let widthInput = document.getElementById("widthInput").value;
-  let heightInput = document.getElementById("heightInput").value;
-
-  //appliying the changes of widht and height
-  document.getElementById("randomCard").style.width = widthInput + "px";
-  document.getElementById("randomCard").style.height = heightInput + "px";
 };
 
 window.onload = generateRandomCard;
@@ -56,3 +48,25 @@ btnClearChangesSize.addEventListener("click", function() {
   document.getElementById("randomCard").style.width = "35%";
   document.getElementById("randomCard").style.height = "60%";
 });
+
+// Adding keypress event to change the width
+document
+  .getElementById("widthInput")
+  .addEventListener("keypress", function(event) {
+    // Verify if the pressed key is Enter
+    if (event.key === "Enter") {
+      let widthInput = parseInt(document.getElementById("widthInput").value);
+      document.getElementById("randomCard").style.width = widthInput + "px";
+    }
+  });
+
+// Adding Keypress event to change the height
+document
+  .getElementById("heightInput")
+  .addEventListener("keypress", function(event) {
+    // Verify if the pressed key is Enter
+    if (event.key === "Enter") {
+      let heightInput = parseInt(document.getElementById("heightInput").value);
+      document.getElementById("randomCard").style.height = heightInput + "px";
+    }
+  });
